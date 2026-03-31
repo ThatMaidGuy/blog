@@ -15,31 +15,31 @@ cover:
 <h3>Инструмент профилирования ObjectDB</h3>
 <p>Другой частый запрос — нормальный инструмент профилирования ObjectDB, который можно считать «сердцем» структуры Object. Первый контрибьютор <a target="_blank" rel="noopener noreferrer nofollow" href="https://github.com/AleksLitynski">Aleksander Litynski</a> реализовал ObjectDB Profiler. С его помощью можно делать снимки текущего состояния ObjectDB во время отладки и сравнивать их между собой — экспортировать диффы между состояниями стало гораздо проще и доступнее. </p>
 <p style="text-align: center">
-  <img src="/media/2025/10/1761130823606838_objectdb-profiler.jpg" alt="objectdb-profiler.jpg">
+  <img src="/blog/media/2025/10/1761130823606838_objectdb-profiler.jpg" alt="objectdb-profiler.jpg">
 </p>
 <h3>Улучшенное автоматическое LOD для мешей с «обрезкой» компонентов</h3>
 <p>Существующий упрощатель мешей поддерживал схлопывание рёбер, но не умел упрощать сами компоненты. <a target="_blank" rel="noopener noreferrer nofollow" href="https://github.com/zeux">Arseny Kapoulkine</a> исправил это, позволив топологически сложным секциям больших мешей проще достиать требуемого уровня детализации. </p>
 <p style="text-align: center">
-  <img src="/media/2025/10/1761130896936576_mesh-component-prune.jpg" alt="mesh-component-prune.jpg">
+  <img src="/blog/media/2025/10/1761130896936576_mesh-component-prune.jpg" alt="mesh-component-prune.jpg">
 </p>
 <h3>Визуализация вращения и привязка (snapping)</h3>
 <p>В 4.6 уже появилось много улучшений в работе с 3D-пространством; стоит отметить два момента, присущих многим 3D-редакторам. <a target="_blank" rel="noopener noreferrer nofollow" href="https://github.com/ryevdokimov">Robert Yevdokimov</a> расширил 3D-Transform gizmo так, чтобы визуализировался текущий дельта-угол при операции вращения (повороты, превышающие 360°, не накапливаются). </p>
 <p style="text-align: center">
-  <img src="/media/2025/10/1761131535562258_rotation-accumulation.gif" alt="rotation-accumulation.gif">
+  <img src="/blog/media/2025/10/1761131535562258_rotation-accumulation.gif" alt="rotation-accumulation.gif">
 </p>
 <p>А пользователь <a target="_blank" rel="noopener noreferrer nofollow" href="https://github.com/passivestar">passivestar</a> добавил привязку орбиты в 3D Viewport: при удержании Alt и выходе из орбитального панорамирования вид будет «защёлкиваться» с шагом 45°, что похоже на переключение в ортографический вид, но удобнее при орбитальном управлении. </p>
 <p style="text-align: center">
-  <img src="/media/2025/10/1761131547604434_rotation-snapping.gif" alt="rotation-snapping.gif">
+  <img src="/blog/media/2025/10/1761131547604434_rotation-snapping.gif" alt="rotation-snapping.gif">
 </p>
 <h3>Рендеринг: смешивание glow до тонемаппинга и изменение режима смешения по умолчанию на screen</h3>
 <p>HDR набирает популярность, но поддержка его в приложениях отстаёт, поскольку большинство программ исторически проектировалось под sRGB и требует доработки для корректной работы с HDR. <a target="_blank" rel="noopener noreferrer nofollow" href="https://github.com/allenwp">Allen Pestaluky</a> внёс PR, который улучшает визуальное качество и подготавливает движок к поддержке HDR-выхода. </p>
 <p>Первое изменение — смешивание эффекта свечения (glow) выполняется до тонемаппинга для всех методов рендеринга и всех режимов смешения (кроме soft light). Раньше это было только в Compatibility renderer, теперь — также в Mobile и Forward+. Смесь до тонемаппинга даёт более реалистичное поведение свечения, избегая жёстких краёв и сдвигов оттенков при смешивании после тонемаппинга.</p>
 <p style="text-align: center">
-  <img src="/media/2025/10/1761131019897690_zen_pM9aIAD0Od.png" alt="zen_pM9aIAD0Od.png">
+  <img src="/blog/media/2025/10/1761131019897690_zen_pM9aIAD0Od.png" alt="zen_pM9aIAD0Od.png">
 </p>
 <p>Второе изменение — смена режима смешения по умолчанию с soft light на screen для всех рендереров (аналогично тому, как это было в Compatibility). Это технически ломает обратную совместимость (будут заметные визуальные различия), и простая перенастройка не вернёт старое поведение, но в большинстве случаев это считается улучшением. Если ваша игра использует Glow, стоит обратить внимание на это изменение.</p>
 <p style="text-align: center">
-  <img src="/media/2025/10/1761131030567736_zen_L2fWA0Mixg.png" alt="zen_L2fWA0Mixg.png">
+  <img src="/blog/media/2025/10/1761131030567736_zen_L2fWA0Mixg.png" alt="zen_L2fWA0Mixg.png">
 </p>
 <h3>И ещё - отобранные улучшения (кратко)</h3>
 <p>Пользовательский список выбранных изменений (не всё перечислено):</p>
