@@ -108,11 +108,11 @@ menu:
     - identifier: archive
       name: Архив статей
       url: /archives/
+      weight: 1
+    - identifier: lol
+      name: Ништяки
+      url: /nishtyaki/
       weight: 10
-    # - identifier: categories
-      # name: Категории
-      # url: /categories/
-      # weight: 10
     - identifier: tags
       name: Теги
       url: /tags/
